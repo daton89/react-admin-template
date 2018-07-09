@@ -1,0 +1,70 @@
+/* .wrapper {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+} */
+
+/* SIDENAV STYLES */
+
+/* #sidenav-wrapper {
+  min-height: 100vh;
+  min-width: 250px;
+  max-width: 250px;
+  overflow-y: auto;
+  background: #7386d5;
+  color: #fff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+} */
+
+/* #sidenav-wrapper.active {
+  margin-left: -250px;
+} */
+
+/* .sidenav-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+} */
+
+/* .sidenav-brand {
+  background: #6d7fcc;
+} */
+
+/* .sidenav-ul p {
+  padding: 10px;
+} */
+
+/* Sidenav link styles */
+
+/* .sidenav-ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.1em;
+  color: #fff;
+} */
+
+/* .sidenav-ul li.active {
+  background: #6d7fcc;
+} */
+
+/* .sidenav-ul li a:hover {
+  color: #7386d5;
+  background: #fff;
+} */
+
+/* @media (max-width: 768px) {
+  #sidenav-wrapper {
+    margin-left: -250px;
+  }
+  .sidenav-ul.active {
+    margin-left: 0;
+  }
+} */
