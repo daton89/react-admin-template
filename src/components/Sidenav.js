@@ -56,11 +56,7 @@ const Sidenav = props => {
   return (
     <Nav id="sidenav-wrapper" className="">
       <BrandDiv>
-        <LogoImage
-          src="https://o9om1lo61y.codesandbox.io/react-logo.png"
-          className="sidenav-logo"
-          alt="logo"
-        />
+        <LogoImage src="react-logo.png" alt="logo" />
       </BrandDiv>
       <UnorderedList>
         <ListHeading>React admin layout</ListHeading>

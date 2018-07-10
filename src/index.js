@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 
 import Sidenav from "./components/Sidenav";
+import Toolbar from "./components/Toolbar";
 import pages from "./pages";
 
 // import "./styles.css";
@@ -19,16 +20,12 @@ function App() {
   return (
     <Wrapper>
       <Sidenav pages={pages} />
-
       <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-              <i class="fas fa-align-left" />
-              <span>Toggle Sidebar</span>
-            </button>
-          </div>
-        </nav>
+        <Toolbar />
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left" />
+          <span>Toggle Sidebar</span>
+        </button>
       </div>
     </Wrapper>
   );
