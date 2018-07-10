@@ -6,7 +6,8 @@ import Sidenav from "./components/Sidenav";
 import Toolbar from "./components/Toolbar";
 import pages from "./pages";
 
-// import "./styles.css";
+import "./styles.css";
+
 const Wrapper = styled.div`
   font-family: Roboto, sans-serif;
   font-style: normal;

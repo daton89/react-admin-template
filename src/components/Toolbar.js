@@ -30,7 +30,7 @@ const UnorderedList = styled.ul`
 
 const ListItem = styled.li`
   flex: 1;
-`
+`;
 
 const Toolbar = props => {
   const { currentPage, username } = props;
