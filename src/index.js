@@ -50,14 +50,15 @@ const App = () => {
         <ContentWrapper id="content-wrapper">
           <Toolbar />
           <Content id="content">
-            <Route exact path="/" render={() => <h1>Home</h1>} />
-            <Route path="/about" render={() => <h1>About</h1>} />
-            <Route path="/contact" render={() => <h1>Contact</h1>} />
-            <Route path="/signup" render={() => <RegisterFormContainer />} />
             <button type="button">
               <i class="fas fa-align-left" />
               <span>Toggle Sidebar</span>
             </button>
+            <Route exact path="/" render={() => <h1>Home</h1>} />
+            <Route path="/about" render={() => <h1>About</h1>} />
+            <Route path="/contact" render={() => <h1>Contact</h1>} />
+            <Route path="/login" render={() => <h1>Login</h1>} />
+            <Route path="/signup" render={() => <RegisterFormContainer />} />
           </Content>
         </ContentWrapper>
       </Wrapper>
