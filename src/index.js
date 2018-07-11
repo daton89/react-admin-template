@@ -21,9 +21,14 @@ const Wrapper = styled.div`
   align-items: stretch;
 `;
 
+const ContentWrapper = styled.div`
+  width: 100%;
+`
+
 const Content = styled.div`
   margin-top: 64px;
   padding: 10px;
+  width: 100%;
 `;
 const reducers = {
   form: formReducer
@@ -40,7 +45,7 @@ function App() {
   return (
     <Wrapper>
       <Sidenav pages={pages} />
-      <div id="content-wrapper">
+      <ContentWrapper id="content-wrapper">
         <Toolbar />
         <Content id="content">
           <button type="button">
@@ -49,7 +54,7 @@ function App() {
           </button>
           <RegisterFormContainer />
         </Content>
-      </div>
+      </ContentWrapper>
     </Wrapper>
   );
 }
