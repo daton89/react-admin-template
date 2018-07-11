@@ -1,16 +1,39 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { customInput, customSelect } from "./fields";
-import {validate} from '../validation'
+import { required, minLength, maxLength } from "../validation/specific";
 
 class RegisterForm extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
-        <Field name="firstname" component={customInput} type="text" label="First Name" />
-        <Field name="surname" component={customInput} type="text" label="Surname" />
-        <Field name="username" component={customInput} type="text" label="Username" />
-        <Field name="newsletter" component={customInput} type="checkbox" label="Signup to our Newsletter?" />
+        <Field
+          name="firstname"
+          component={customInput}
+          type="text"
+          label="First Name"
+          validate={[required]}
+        />
+        <Field
+          name="surname"
+          component={customInput}
+          type="text"
+          label="Surname"
+          validate={[required]}          
+        />
+        <Field
+          name="username"
+          component={customInput}
+          type="text"
+          label="Username"
+          validate={[required, minLength, maxLength]}
+        />
+        <Field
+          name="newsletter"
+          component={customInput}
+          type="checkbox"
+          label="Signup to our Newsletter?"
+        />
         <button type="submit"> Submit </button>
       </form>
     );
@@ -18,8 +41,8 @@ class RegisterForm extends Component {
 }
 
 RegisterForm = reduxForm({
-  form: "register",
-  validate
+  form: "register"
+  // validate
 })(RegisterForm);
 
 export default RegisterForm;
