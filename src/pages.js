@@ -2,7 +2,7 @@ export default [
   {
     roles: ["user"],
     type: "link",
-    url: "/#!/home",
+    url: "/",
     active: true,
     icon: "fa-dashboard",
     name: "Home"
@@ -10,7 +10,7 @@ export default [
   {
     roles: ["user"],
     type: "link",
-    url: "/#!/about",
+    url: "/about",
     active: false,
     icon: "fa-list-alt",
     name: "About"
@@ -18,33 +18,34 @@ export default [
   {
     roles: ["user"],
     type: "link",
-    url: "/#!/portfolio",
+    url: "/contact",
     active: false,
     icon: "fa-list-alt",
     name: "Contact"
   },
   {
-    roles: ["admin"],
+    roles: ["user"],
     type: "dropdown",
     url: "",
     active: false,
     icon: "fa-book",
-    name: "Pages",
+    name: "Auth",
     childs: [
       {
+        roles: ["user"],
         type: "link",
-        url: "/#!/page1",
-        name: "Page 1"
+        url: "/signup",
+        active: false,
+        icon: "fa-list-alt",
+        name: "Signup"
       },
       {
+        roles: ["user"],
         type: "link",
-        url: "/#!/page2",
-        name: "Page 2"
-      },
-      {
-        type: "link",
-        url: "/#!/page3",
-        name: "Page 3"
+        url: "/login",
+        active: false,
+        icon: "fa-list-alt",
+        name: "Login"
       }
     ]
   }

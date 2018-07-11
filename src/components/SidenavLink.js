@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Li = styled.li`
-  &.active {
-    background: #6d7fcc;
-  }
-`;
-
-const Anchor = styled.a`
+  cursor: pointer;
   display: block;
   text-decoration: none;
   padding: 10px;
@@ -18,16 +14,16 @@ const Anchor = styled.a`
     color: #7386d5;
     background: #fff;
   }
+  &.active {
+    background: #6d7fcc;
+  }
 `;
 
 const SidenavLink = props => {
   const { name, url /* ,icon, roles */ } = props;
   return (
     <Li>
-      <Anchor href={url} className="">
-        <i className="fa fa-dashboard fa-1-3x" />
-        {name}
-      </Anchor>
+      <Link to={url}>{name}</Link>
     </Li>
   );
 };

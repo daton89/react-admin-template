@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Sidenav from "./components/Sidenav";
 import Toolbar from "./components/Toolbar";
 import pages from "./pages";
-import RegisterFormContainer from './containers/RegisterForm'
+import RegisterFormContainer from "./containers/RegisterForm";
 
 import "./styles.css";
 
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   width: 100%;
-`
+`;
 
 const Content = styled.div`
   margin-top: 64px;
@@ -41,21 +42,26 @@ let store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-function App() {
+const App = () => {
   return (
-    <Wrapper>
-      <Sidenav pages={pages} />
-      <ContentWrapper id="content-wrapper">
-        <Toolbar />
-        <Content id="content">
-          <button type="button">
-            <i class="fas fa-align-left" />
-            <span>Toggle Sidebar</span>
-          </button>
-          <RegisterFormContainer />
-        </Content>
-      </ContentWrapper>
-    </Wrapper>
+    <Router>
+      <Wrapper>
+        <Sidenav pages={pages} />
+        <ContentWrapper id="content-wrapper">
+          <Toolbar />
+          <Content id="content">
+            <Route exact path="/" render={() => <h1>Home</h1>} />
+            <Route path="/about" render={() => <h1>About</h1>} />
+            <Route path="/contact" render={() => <h1>Contact</h1>} />
+            <Route path="/signup" render={() => <RegisterFormContainer />} />
+            <button type="button">
+              <i class="fas fa-align-left" />
+              <span>Toggle Sidebar</span>
+            </button>
+          </Content>
+        </ContentWrapper>
+      </Wrapper>
+    </Router>
   );
 }
 
