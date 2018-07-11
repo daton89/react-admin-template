@@ -8,3 +8,13 @@ export const maxLength = value =>
 
 export const matchesPassword = (value, allValues) =>
   value !== allValues.password ? "Passwords must match" : undefined;
+
+export const asyncValidate = async values => {
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+  await sleep(1000)
+  if (["daton89", "tony"].includes(values.username)) {
+    return Promise.reject({
+      username: "Username arleady taken"
+    });
+  }
+}
