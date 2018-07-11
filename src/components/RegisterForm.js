@@ -3,6 +3,8 @@ import { Field, reduxForm } from "redux-form";
 import { customInput, customSelect } from "./fields";
 import { required, minLength, maxLength } from "../validation/specific";
 
+import './RegisterForm.css'
+
 class RegisterForm extends Component {
   render() {
     return (

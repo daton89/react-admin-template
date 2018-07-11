@@ -1,22 +1,33 @@
-import React from 'react'
+import React from "react";
+import cx from "classnames";
 
-export const customInput = props => {
-  const {label, input, type, errors, meta} = props
-  return(
-    <div>
-      <label>{label}</label>
-      <input {...input} type={type}/>
-      {(meta.error && meta.touched) && (
-        <div style={{color: 'red'}}>{meta.error}</div>
-      )}
-    </div>
-  )
-
+const getValidityClassName = meta => {
+  if (meta.active) return
+  if (meta.touched && meta.invalid) return 'invalid'
+  if (meta.touched && meta.valid) return 'valid'
 }
 
-export const customSelect = props => {
+export const customInput = props => {
+  const { label, input, type, errors, meta } = props;
+  return (
+    <div
+      className={cx(
+        "custom-input-container",
+        { "flex-row-reverse": type === "checkbox" },
+        { dirty: meta.dirty },
+        getValidityClassName(meta)
+      )}
+    >
+      <input {...input} type={type} />
+      <label>{label}</label>
+      {meta.error &&
+        meta.touched && <div className="feedback-text error-text">{meta.error}</div>}
+    </div>
+  );
+};
 
-  return(
+export const customSelect = props => {
+  return (
     <div>
       <label>{props.label}</label>
       <select {...props.input}>
@@ -25,6 +36,5 @@ export const customSelect = props => {
         <option value="2">option 2 </option>
       </select>
     </div>
-  )
-
-}
+  );
+};
