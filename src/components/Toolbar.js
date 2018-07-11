@@ -12,6 +12,9 @@ const Nav = styled.nav`
   right: 0;
   z-index: 1030;
   margin-bottom: 23px;
+  min-height: 64px;
+  max-height: 64px;
+  height: 64px;
   color: white;
   transition: all 0.5s ease;
   &.blue {
@@ -24,8 +27,7 @@ const Nav = styled.nav`
 
 const UnorderedList = styled.ul`
   list-style: none;
-  min-height: 64px;
-  height: 46px;
+
   padding: 0 10px;
   display: flex;
   align-items: center;
@@ -45,15 +47,14 @@ const Toolbar = props => {
           <img src="icons/bars.png" alt="bars" />
         </ListItem>
         <ListItem>
-          <strong>{currentPage || window.location.pathname}</strong>
+          <span>{currentPage || window.location.pathname}</span>
         </ListItem>
-        <li style={{ flex: 10 }} />
+        <li style={{ flex: 5 }} />
         <ListItem className="show-admin">
           <img src="icons/users.png" alt="bars" />
           <span>1</span>
         </ListItem>
         <ListItem>
-          <i className="fa fa-user fa-1-3x" />
           <strong>{username}</strong>
         </ListItem>
         <ListItem>

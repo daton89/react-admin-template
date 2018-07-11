@@ -17,16 +17,23 @@ const Wrapper = styled.div`
   align-items: stretch;
 `;
 
+const Content = styled.div`
+  margin-top: 64px;
+  padding: 10px;
+`
+
 function App() {
   return (
     <Wrapper>
       <Sidenav pages={pages} />
-      <div id="content">
+      <div id="content-wrapper">
         <Toolbar />
-        <button type="button" id="sidebarCollapse" class="btn btn-info">
-          <i class="fas fa-align-left" />
-          <span>Toggle Sidebar</span>
-        </button>
+        <Content id="content">
+          <button type="button">
+            <i class="fas fa-align-left" />
+            <span>Toggle Sidebar</span>
+          </button>
+        </Content>
       </div>
     </Wrapper>
   );
